@@ -4,8 +4,8 @@ import streamlit as st
 st.set_page_config(
     page_title="QR OS",
     page_icon="🔳",
-    layout="wide"
-    inital_sidebar="locked"
+    layout="wide",
+    inital_sidebar="locked",
     menu_items={
         "test":"a"
     }
