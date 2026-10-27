@@ -11,9 +11,10 @@ st.set_page_config(
 with st.sidebar:
     st.sidebar.header("QRコード")
     st.button("読み取り")
-    st.button("書き出し")
+    st.button("新規")
 
-
+st.title("QR OS")
 st.write("QRコードで情報を管理するOSもどきです。")
-st.write("⬅️左のメニューから読み込みを行って操作してください")
+st.write("⬅️左のメニューからQRコードを読み取り操作してください。")
+st.write("はじめて使う方は新規を押してください")
 
