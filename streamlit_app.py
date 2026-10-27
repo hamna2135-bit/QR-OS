@@ -3,7 +3,7 @@ import streamlit as st
 
 st.title("QR OS")
 
-with st.sideber:
+with st.sidebar:
     st.write("a")
 
 st.write("QRコードで情報を管理するOSもどきです。")
