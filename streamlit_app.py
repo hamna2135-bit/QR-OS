@@ -5,11 +5,13 @@ st.set_page_config(
     page_title="QR OS",
     page_icon="🔳",
     layout="wide",
-    initial_sidebar_state="locked",
-    menu_items={
-        "test":"a"
-    }
+    initial_sidebar_state="locked"
 )
+
+with st.sidebar:
+    st.sidebar.header("QRコード")
+    st.button("読み取り")
+    st.button("書き出し")
 
 
 st.write("QRコードで情報を管理するOSもどきです。")
