@@ -5,7 +5,7 @@ st.set_page_config(
     page_title="QR OS",
     page_icon="🔳",
     layout="wide",
-    initial_sidebar="locked",
+    initial_sidebar_state="locked",
     menu_items={
         "test":"a"
     }
