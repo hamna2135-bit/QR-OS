@@ -16,7 +16,7 @@ def camera():
         #    continue
         #cap.release()
         #break
-    pic = st.camera_input()
+    pic = st.camera_input("")
     if pic:
         detect(pic)
 
