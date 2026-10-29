@@ -26,7 +26,8 @@ with st.sidebar:
     if st.button("カメラから読み取り"):
             pic = st.camera_input("カメラ読み取り",label_visibility="hidden")
             if pic:
-                 qr.detect(pic)
+                st.image(pic)
+                qr.detect(pic)
     if st.button("新規"):
         st.toast("ﾁﾝｯ 🍞")
 
