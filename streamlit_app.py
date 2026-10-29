@@ -15,7 +15,8 @@ def qrread():
     code_image = st.file_uploader("画像から読み取り",type="image/*")
     if code_image is not None:
         qr.detect(code_image)
-    st.button("カメラから読み取り")
+    if st.button("カメラから読み取り"):
+        qr.camera()
 
 with st.sidebar:
     st.sidebar.header("QRコード")
