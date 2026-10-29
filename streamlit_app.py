@@ -19,7 +19,7 @@ st.set_page_config(
     #    qr.camera()
 
 with st.sidebar:
-    st.sidebar.header("QRコード読み取り")
+    st.header("QRコード読み取り")
     code_image = st.file_uploader("画像から読み取り",type="image/*")
     if code_image is not None:
         qr.detect(code_image)
@@ -30,6 +30,7 @@ with st.sidebar:
                 qr.detect(pic)
     if st.button("新規"):
         st.toast("ﾁﾝｯ 🍞")
+    
 
 st.title("QR OS")
 st.write("QRコードで情報を管理するOSもどきです。")
