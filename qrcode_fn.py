@@ -18,8 +18,10 @@ def camera():
         #break
     pic = st.camera_input("code")
     if pic is not None:
+        st.session_state["captured_image"] = pic
         st.write("カメラ通ったよ")
-        detect(pic)
+        if "captured_image" in st.session_state and st.session_state["captured_image"]:
+            detect(st.session_state["captured_image"])
 
 
 
