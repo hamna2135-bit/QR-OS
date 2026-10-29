@@ -19,24 +19,40 @@ st.set_page_config(
     #    qr.camera()
 pic = None
 
-with st.sidebar:
-    st.header("QRコード読み取り")
+#with st.sidebar:
+#    st.header("QRコード読み取り")
+#    code_image = st.file_uploader("画像から読み取り",type="image/*")
+#    if code_image is not None:
+#        qr.detect(code_image)
+#    if st.button("カメラから読み取り"):
+#        pic = st.camera_input("カメラ読み取り",label_visibility="hidden")
+#    if pic is not None:
+#        st.image(pic)
+#        qr.detect(pic)
+#    if st.button("新規"):
+#        st.toast("ﾁﾝｯ 🍞")
+    
+
+st.title("QR OS")
+st.write("QRコードで情報を管理するOSもどきです。")
+st.write("下のメニューからQRコードを読み取り操作してください。")
+st.write("はじめて使う方は新規を押してください")
+
+col1,col2 = st.columns(2)
+with col1:
     code_image = st.file_uploader("画像から読み取り",type="image/*")
     if code_image is not None:
         qr.detect(code_image)
+
+with col2:
     if st.button("カメラから読み取り"):
         pic = st.camera_input("カメラ読み取り",label_visibility="hidden")
     if pic is not None:
         st.image(pic)
         qr.detect(pic)
-    if st.button("新規"):
-        st.toast("ﾁﾝｯ 🍞")
-    
 
-st.title("QR OS")
-st.write("QRコードで情報を管理するOSもどきです。")
-st.write("⬅️左のメニューからQRコードを読み取り操作してください。")
-st.write("はじめて使う方は新規を押してください")
+if st.button("新規"):
+    st.toast("ﾁﾝｯ 🍞")
 
 #pic = st.camera_input("カメラ読み取り")
 #if pic:
