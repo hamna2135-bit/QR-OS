@@ -18,8 +18,8 @@ st.write("はじめて使う方は新規を押してください")
 def qrread():
     st.write("画像から読み取り")
     code_image = st.file_uploader("QRコード",type="image/*")
-    for item in code_image:
-        qr.detect(item)
+    if code_image is not None:
+        qr.detect(code_image)
     st.button("カメラから読み取り")
 
 with st.sidebar:
