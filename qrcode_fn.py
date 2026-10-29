@@ -18,6 +18,7 @@ def camera():
         #break
     pic = st.camera_input("")
     if pic:
+        st.image(pic)
         detect(pic)
 
 
