@@ -46,7 +46,7 @@ with col1:
 
 with col2:
     #if st.button("カメラから読み取り"):
-    enable = st.button("カメラから読み取り")
+    enable = st.toggle("カメラから読み取り")
     pic = st.camera_input("カメラ読み取り",disabled=not enable,label_visibility="hidden")
     if pic:
         st.image(pic)
