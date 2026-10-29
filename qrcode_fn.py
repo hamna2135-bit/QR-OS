@@ -18,6 +18,7 @@ def camera():
         #break
     pic = st.camera_input("code")
     if pic:
+        st.write("カメラ通ったよ")
         detect(pic)
 
 
@@ -34,6 +35,7 @@ def detect(qrcode):
             st.write("内容を読み取れませんでした")
         else:
             st.write(deta)
+    st.write("ディテクト通ったよ")
 
 def main():
     pass
