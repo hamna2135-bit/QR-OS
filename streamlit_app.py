@@ -9,11 +9,6 @@ st.set_page_config(
     initial_sidebar_state="locked"
 )
 
-st.title("QR OS")
-st.write("QRコードで情報を管理するOSもどきです。")
-st.write("⬅️左のメニューからQRコードを読み取り操作してください。")
-st.write("はじめて使う方は新規を押してください")
-
 @st.dialog("QRコード読み取り")
 def qrread():
     st.write("画像から読み取り")
@@ -22,7 +17,15 @@ def qrread():
         qr.detect(code_image)
     st.button("カメラから読み取り")
 
-with st.sidebar:
-    st.sidebar.header("QRコード")
-    st.button("読み取り",on_click=qrread())
-    st.button("新規")
+def main():
+    with st.sidebar:
+        st.sidebar.header("QRコード")
+        st.button("読み取り",on_click=qrread())
+        st.button("新規")
+    st.title("QR OS")
+    st.write("QRコードで情報を管理するOSもどきです。")
+    st.write("⬅️左のメニューからQRコードを読み取り操作してください。")
+    st.write("はじめて使う方は新規を押してください")
+
+if __name__ == '__main__':
+    main()
