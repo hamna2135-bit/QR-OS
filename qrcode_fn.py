@@ -17,7 +17,7 @@ def camera():
         #cap.release()
         #break
     pic = st.camera_input("code")
-    if pic:
+    if pic is not None:
         st.write("カメラ通ったよ")
         detect(pic)
 
