@@ -23,8 +23,8 @@ with st.sidebar:
     code_image = st.file_uploader("画像から読み取り",type="image/*")
     if code_image is not None:
         qr.detect(code_image)
-    #if st.button("カメラから読み取り"):
-            #qr.camera()
+    if st.button("カメラから読み取り"):
+            qr.camera()
     if st.button("新規"):
         st.toast("ﾁﾝｯ 🍞")
 
@@ -33,10 +33,10 @@ st.write("QRコードで情報を管理するOSもどきです。")
 st.write("⬅️左のメニューからQRコードを読み取り操作してください。")
 st.write("はじめて使う方は新規を押してください")
 
-pic = st.camera_input("カメラ読み取り")
-if pic:
-    st.write("カメラ通ったよ")
-    qr.detect(pic)
+#pic = st.camera_input("カメラ読み取り")
+#if pic:
+    #st.write("カメラ通ったよ")
+    #qr.detect(pic)
 
 
 #if __name__ == '__main__':
