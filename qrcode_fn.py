@@ -6,6 +6,28 @@ qcd = cv2.QRCodeDetector()
 params = cv2.QRCodeEncoder_Params()
 qce = cv2.QRCodeEncoder.create(params)
 
+
+def camera():
+    cap = cv2.VideoCapture(0)
+    while True:
+        # カメラから1フレーム読み取り
+        ret, frame = cap.read()
+        if not ret:
+            continue
+        cap.release()
+        break
+    retval, decoded_info, points, straight_qrcode = qcd.detectAndDecodeMulti(item)
+    if decoded_info == ():
+        st.error("QRコードがありません")
+    for deta in decoded_info:
+        if deta == "":
+            st.error("内容を読み取れませんでした")
+        else:
+            st.write(deta)
+
+
+
+
 def detect(qrcode):
     file_bytes = np.frombuffer(qrcode.read(), np.uint8)
     item = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
