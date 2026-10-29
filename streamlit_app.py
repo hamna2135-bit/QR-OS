@@ -17,7 +17,7 @@ st.set_page_config(
     #    qr.detect(code_image)
     #if st.button("カメラから読み取り"):
     #    qr.camera()
-pic = None
+#pic = None
 
 #with st.sidebar:
 #    st.header("QRコード読み取り")
@@ -45,9 +45,10 @@ with col1:
         qr.detect(code_image)
 
 with col2:
-    if st.button("カメラから読み取り"):
-        pic = st.camera_input("カメラ読み取り",label_visibility="hidden")
-    if pic is not None:
+    #if st.button("カメラから読み取り"):
+    enable = st.button("カメラから読み取り")
+    pic = st.camera_input("カメラ読み取り",disabled=not enable,label_visibility="hidden")
+    if pic:
         st.image(pic)
         qr.detect(pic)
 
