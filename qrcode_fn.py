@@ -18,7 +18,6 @@ def camera():
         #break
     pic = st.camera_input("")
     if pic:
-        st.image(pic)
         detect(pic)
 
 
@@ -29,10 +28,10 @@ def detect(qrcode):
     item = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
     retval, decoded_info, points, straight_qrcode = qcd.detectAndDecodeMulti(item)
     if decoded_info == ():
-        st.error("QRコードがありません")
+        st.write("QRコードがありません")
     for deta in decoded_info:
         if deta == "":
-            st.error("内容を読み取れませんでした")
+            st.write("内容を読み取れませんでした")
         else:
             st.write(deta)
 
