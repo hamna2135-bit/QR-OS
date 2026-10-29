@@ -9,19 +9,22 @@ st.set_page_config(
     initial_sidebar_state="locked"
 )
 
-@st.dialog("QRコード読み取り")
-def qrread():
+#@st.dialog("QRコード読み取り")
+#def qrread():
     #st.write("画像から読み取り")
+    #code_image = st.file_uploader("画像から読み取り",type="image/*")
+    #if code_image is not None:
+    #    qr.detect(code_image)
+    #if st.button("カメラから読み取り"):
+    #    qr.camera()
+
+with st.sidebar:
+    st.sidebar.header("QRコード読み取り")
     code_image = st.file_uploader("画像から読み取り",type="image/*")
     if code_image is not None:
         qr.detect(code_image)
     if st.button("カメラから読み取り"):
-        qr.camera()
-
-with st.sidebar:
-    st.sidebar.header("QRコード")
-    if st.button("読み取り"):
-        qrread()
+            qr.camera()
     if st.button("新規"):
         st.toast("ﾁﾝｯ 🍞")
 
